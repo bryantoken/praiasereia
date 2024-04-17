@@ -1,0 +1,27 @@
+<h1 class="text-center"><%= pluralize(@moradors.count, "Result") %></h1>
+
+<div class="container">
+  <table class="table table-light table-striped">
+    <thead>
+    <tr>
+    <th><%= sort_link(@query, :cpf, "CPF", default_order: :asc) %></th>
+    <th><%= sort_link(@query, :nome, "Nome") %></th>
+    <th><%= sort_link(@query, :celular, "Celular") %></th>
+    <th><%= sort_link(@query, :bloco, "Bloco") %></th>
+    <th><%= sort_link(@query, :apartamento, "Apartamento") %></th>
+    </tr>
+    </thead>
+    <tbody>
+        <% @moradors.each do |morador| %>
+  <tr>
+    <td><%= link_to morador.cpf, morador_path(morador) %></td>
+    <td><%= link_to morador.nome, morador_path(morador) %></td>
+    <td><%= link_to morador.celular, morador_path(morador) %></td>
+    <td><%= link_to morador.bloco, morador_path(morador) %></td>
+    <td><%= link_to morador.apartamento, morador_path(morador) %></td>
+  </tr>
+<% end %>
+
+    </tbody>
+  </table>  
+</div>

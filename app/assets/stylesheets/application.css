@@ -1,0 +1,119 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+ * {
+   margin: 0;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   font-weight: 500 !important;
+   font-style: normal;
+ }
+
+ /* Navbar */
+ .navbar {
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
+   background-color: #0d223b;
+   min-height: 10vh;
+ }
+
+ /* welcome */
+ .welcome {
+  min-height: 100vh;
+   /* background: linear-gradient(to left bottom, #062952, #3b8eea); */
+   /* background: linear-gradient(to left bottom, #041f3e, #022042); */
+   background: linear-gradient(to left bottom, #3a45d7, #021b38);
+ }
+
+ .texture-welcome {
+  min-height: 100vh;
+   background-image: url(texture.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+ }
+
+ /* Subdiv da Navbar */
+ .container-fluid.cabecalho {
+   padding: 0px 50px 0px 50px;
+ }
+
+ /* main geral (padrão) */
+ #main {
+   background-color: #ffffff;
+   min-height: 90vh;
+ }
+
+ /* FONTES ************************************ */
+ .montserrat {
+   font-family: "Montserrat", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+ }
+
+ /* ******************************************* */
+
+ /* formatar links gerais */
+ .link {
+   color: #364652 !important;
+   display: flex;
+   align-items: center;
+ }
+
+ /* navbar links */
+
+ .nav-link:hover {
+   box-shadow: 0 6px 0 #ffffff inset;
+   /* Adiciona sombra para cima */
+   transition: box-shadow 0.2s;
+   /* Adiciona transição suave */
+ }
+
+ .nav-link {
+   /* letter-spacing: 2px; */
+   color: #ffffff !important;
+ }
+
+ /* formatando botões */
+ /* .btn.cadastrar {
+  background-color: #ffffff !important;
+  border-radius: 40px;
+  color: #364652 !important;
+  font-size: 1em;
+  display: flex;
+  justify-content:space-around;
+  transition:all 0.2s;
+  align-items: center;
+  width: 135px;
+}
+.btn.cadastrar:hover{
+  background-color:#31ab63 !important;
+  color: white;
+} */
+
+ ul {
+   list-style: none;
+ }
+
+ /* Formulario de cadastro de morador */
+ .formu {
+   padding: 1.5em;
+   box-shadow: 0px 0px 10px 1px rgba(100, 100, 100, 0.1);
+   /* offsetX offsetY blurRadius color */
+   border-radius: 15px;
+   background-color: white;
+   /* border: 1px solid #afafaf; */
+   min-width: 400px;
+   max-width: 600px;
+ }
+
+ /* body da tela de cadastro */
+ .corpo-cad {
+   width: 100vw;
+   min-height: 90vh;
+ }

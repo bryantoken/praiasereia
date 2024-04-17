@@ -1,0 +1,44 @@
+<div class="formu">
+<div class="d-flex w-100 me-auto">
+  <%= link_to moradors_path, class: "text-decoration-none link" do %>
+<ion-icon name="arrow-back"></ion-icon>
+  Voltar
+  <% end %>
+</div>
+
+<%= form_with(model: @morador, url: morador_path(@morador)) do |form| %>
+
+  <div class="mb-1">
+    <%= form.label :cpf, class: "form-label" %>
+    <%= form.number_field :cpf, class: "form-control", maxlength: 11, min: 0%>
+  </div>
+
+  <div class="mb-1">
+    <%= form.label :nome, class: "form-label" %>
+    <%= form.text_field :nome, class: "form-control" %>
+  </div>
+
+  <div class="mb-1">
+    <%= form.label :celular, class: "form-label" %>
+    <%= form.number_field :celular, class: "form-control" %>
+  </div>
+
+  <div class="mb-1">
+    <%= form.label :bloco, class: "form-label" %>
+    <%= form.select :bloco, options_for_select(
+      ("A".."S").reject { |letter| letter == "K" }.map { |letter| [letter, letter] }
+    ), {}, class: "form-control" %>
+  </div>
+
+  <div class="mb-1">
+    <%= form.label :apartamento, class: "form-label" %>
+    <%= form.select :apartamento, options_for_select([
+      ["101", "101"], ["102", "102"], ["103", "103"], ["104", "104"],
+      ["201", "201"], ["202", "202"], ["203", "203"], ["204", "204"],
+      ["301", "301"], ["302", "302"], ["303", "303"], ["304", "304"],
+      ["401", "401"], ["402", "402"], ["403", "403"], ["404", "404"]
+    ]), {}, class: "form-control" %>
+  </div>
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -1,0 +1,9 @@
+<%= search_form_for(@query, url: search_path, method: :get, class: "d-flex w-100") do |f| %>
+  <div class="input-group">
+   
+    <%= f.search_field :cpf_or_nome_or_celular_or_bloco_or_apartamento_cont_any, placeholder: "Search...", class: "form-control me-0" %>
+ <span class="input-group-text">
+      <ion-icon name="search-outline"></ion-icon>
+    </span>
+  </div>
+<% end %>
