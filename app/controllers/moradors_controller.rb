@@ -2,7 +2,7 @@ class MoradorsController < ApplicationController
   before_action :set_morador, only: %i[ show edit update destroy ]
 
 def index
-  @moradors = Morador.paginate(page: params[:page], per_page: 8).order(DATA_CADASTRO: :desc)
+  @moradors = Morador.paginate(page: params[:page], per_page: 9).order(DATA_CADASTRO: :desc)
 end
 
   def new
@@ -24,26 +24,25 @@ def create
 end
 
 def update
-    # respond_to do |format|
-    #   if @morador.update(morador_params)
-    #     format.html { redirect_to morador_url(@morador), notice: "Morador was successfully updated." }
-    #     format.json { render :show, status: :ok, location: @morador }
-    #   else
-    #     format.html { render :edit, status: :unprocessable_entity }
-    #     format.json { render json: @morador.errors, status: :unprocessable_entity }
-    #   end
-    # end
-    @morador = Morador.find(params[:id])
-    if @morador.update(params[:morador].permit(:cpf, :nome, :celular, :bloco, :apartamento))
-      redirect_to @morador
-    else
-      render 'edit'
+    respond_to do |format|
+      if @morador.update(morador_params)
+        format.html { redirect_to morador_url(@morador), notice: "Morador was successfully updated." }
+        format.json { render :show, status: :ok, location: @morador }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @morador.errors, status: :unprocessable_entity }
+      end
     end
+    # @morador = Morador.find(params[:id])
+    # if @morador.update(params[:morador].permit(:cpf, :nome, :celular, :bloco, :apartamento))
+    #   redirect_to @morador
+    # else
+    #   render 'edit'
+    # end
 
   end
 
   def show
-    # O morador já foi buscado pelo before_action
   end
 
 def destroy
@@ -53,7 +52,6 @@ def destroy
 end
 
   def edit
-    # O morador já foi buscado pelo before_action
     @morador = Morador.find(params[:id])
   end
 

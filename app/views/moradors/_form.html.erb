@@ -6,21 +6,21 @@
   <% end %>
 </div>
 
-<%= form_with(model: @morador, url: morador_path(@morador)) do |form| %>
+<%= form_with(model: morador) do |form| %>
 
   <div class="mb-1">
     <%= form.label :cpf, class: "form-label" %>
-    <%= form.number_field :cpf, class: "form-control", maxlength: 11, min: 0%>
+    <%= form.text_field :cpf, required: true, class: "form-control", maxlength: 11 %>
   </div>
 
   <div class="mb-1">
     <%= form.label :nome, class: "form-label" %>
-    <%= form.text_field :nome, class: "form-control" %>
+    <%= form.text_field :nome, required: true, class: "form-control" %>
   </div>
 
   <div class="mb-1">
     <%= form.label :celular, class: "form-label" %>
-    <%= form.number_field :celular, class: "form-control" %>
+    <%= form.text_field :celular, required: true, class: "form-control", maxlength: 11 %>
   </div>
 
   <div class="mb-1">
