@@ -1,0 +1,44 @@
+<div class="offcanvas offcanvas-start bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-light col-8" id="offcanvasLabel">Smart Tech</h5>
+        <button type="button"
+            class="text-light btn bg-transparent col-4 d-flex justify-content-end border-0 align-items-center"
+            data-bs-dismiss="offcanvas" aria-label="Close">
+            <ion-icon name="close-outline" style="font-size:2em;"></ion-icon>
+        </button>
+    </div>
+    <div class="offcanvas-body h-100 d-flex justify-content-between flex-column">
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item border-0 bg-transparent text-light">
+                <%= link_to "MORADORES" , moradors_path, class:"roboto-thin nav-link"%>
+            </li>
+            <li class="list-group-item border-0 bg-transparent text-light">
+
+                <%= link_to "SOLICITAÇÕES" , welcome_index_path, class:"roboto-thin nav-link disabled"%>
+            </li>
+           <!--
+            <li class="list-group-item border-0 bg-transparent text-light">
+                <%= button_to new_morador_path, method: :get, class: "nav-link" do %>
+                    CADASTRAR 
+                    <% end %>
+            </li>
+           --> 
+            <li>
+                <div>
+                    <%= render 'search/form' %>
+                </div>
+            </li>
+        </ul>
+        <ul class="m-0 p-0">
+            <li>
+                <li>
+                <div>
+                    <%= render 'search/form' %>
+                </div>
+            </li>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>

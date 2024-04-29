@@ -1,5 +1,5 @@
 .digg_pagination {
-  background: white;
+  background: rgba(255, 255, 255, 0.201);
   cursor: default;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
@@ -46,7 +46,7 @@
     overflow: hidden; }
 
 .apple_pagination {
-  background: #ffffff;
+  background: #ffffffc0;
   border: 1px solid #e5e5e5;
   text-align: center;
   padding: 1em;

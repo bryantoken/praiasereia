@@ -1,28 +1,29 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-.navbar {
-  border-bottom: 1px solid #ffffff;
-  backdrop-filter: blur(5px);
-  transition: background-color .2s ease-in-out;
-  background-color: #0d223b5f;  
-}
+ .navbar {
+   /* border-bottom: 1px solid #ffffff; */
+   /* backdrop-filter: blur(5px); */
+   /* transition: background-color .2s ease-in-out; */
+   background-color: #1a1a1a;
+   border-bottom: 1px solid gray;
+ }
 
 
-.onTop {
-  background-color: #0d223b;  
-  border: 0;
-}
-
- 
+ .onTop {
+   /* background-color: #0d223b; */
+   /* border: 0; */
+ }
  @media (max-width: 768px) {
-      .hide {
-        display: none !important;
-      }
-      .ajustar{
-        flex-direction: row !important;
-      }
-    }
+   .hide {
+     display: none !important;
+   }
+
+   .ajustar {
+     flex-direction: row !important;
+   }
+ }
+
  * {
    margin: 0;
  }
@@ -46,15 +47,16 @@
 
  /* welcome */
  .welcome {
-  min-height: 100vh;
+   min-height: 100vh;
    /* background: linear-gradient(to left bottom, #062952, #3b8eea); */
    /* background: linear-gradient(to left bottom, #041f3e, #022042); */
    background: linear-gradient(to left bottom, #3a45d7, #021b38);
  }
 
  .texture-welcome {
-  min-height: 100vh;
+   min-height: 100vh;
    background-image: url(texture.png);
+   background-attachment: fixed;
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -75,7 +77,7 @@
  .montserrat {
    font-family: "Montserrat", sans-serif;
    font-optical-sizing: auto;
-   font-weight: 400;
+   /* font-weight: 400; */
  }
 
  /* ******************************************* */
@@ -89,19 +91,22 @@
 
  /* navbar links */
 
- .nav-link:hover {
+ .nav-link-custom:hover {
    box-shadow: 0 6px 0 #ffffff inset;
    /* Adiciona sombra para cima */
    transition: box-shadow 0.2s;
    /* Adiciona transição suave */
  }
-
- .nav-link {
+ .nav-link-custom:active {
+   box-shadow: 0 6px 0 #ffffff inset;
+ }
+ .nav-link-custom {
    /* letter-spacing: 2px; */
    color: #ffffff !important;
  }
- .disabled{
-  color: #c7c7c7 !important;
+
+ .disabled {
+   color: #c7c7c7 !important;
  }
 
  /* formatando botões */

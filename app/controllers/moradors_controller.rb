@@ -1,4 +1,6 @@
 class MoradorsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :authorize_admin!
   before_action :set_morador, only: %i[ show edit update destroy ]
 
 def index
@@ -58,6 +60,13 @@ end
 
 
   private
+def authorize_admin!
+    unless current_user.admin?
+      flash[:alert] = "Acesso negado!"
+      redirect_to root_path
+    end
+  end
+  
   def set_morador
     @morador = Morador.find(params[:id])
   rescue ActiveRecord::RecordNotFound

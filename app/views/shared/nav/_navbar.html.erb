@@ -1,0 +1,82 @@
+<nav class="navbar  navbar-expand-lg p-0 pt-0 pb-0 sticky-top onTop">
+    <div class="container-fluid row m-0">
+        <!--########################################################-->
+        <div class="navbar-brand d-flex align-items-center col-10 col-md-3 m-0">
+            <div class="col-12">
+                <a class="navbar-brand" href="/">
+                    <%= image_tag("logo_1x2.png", class: "logo-img" , alt: "Logo da empresa" , width: 65, height: 55) %>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                <button class="btn bg-transparent text-light p-0 d-flex d-md-none border-0" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+                    <ion-icon name="menu-outline" style="font-size: 2em;"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <!--########################################################-->
+        <div class="col-md-4 d-md-flex d-none d-flex align-items-center">
+            <% if current_page?(root_path) %>
+                <div></div>
+                <% else %>
+                    <%= render 'search/form' %>
+                        <% end %>
+        </div>
+        <!--########################################################-->
+        <div class="d-none d-md-flex col-md-5 justify-content-center">
+            <div class="col-md-12">
+                <ul class="navbar-nav justify-content-center flex-row" style="font-size: small;">
+                    <li class="nav-item d-inline p-1">
+                        <%= link_to "MORADORES" , moradors_path, class:"roboto-thin nav-link-custom nav-link"%>
+                    </li>
+                    <li class="nav-item d-inline p-1">
+                        <%= link_to "SOLICITAÇÕES" , welcome_index_path, class:"roboto-thin nav-link-custom nav-link
+                            disabled"%>
+                            <!-- Em construção -->
+                    </li>
+                    <!--
+  <li class="nav-item d-inline p-1">
+    <%= button_to new_morador_path, method: :get, class: "nav-link nav-link-custom d-flex flex-row align-items-center" do %>
+      CADASTRAR
+    <% end %>
+
+  </li>
+
+  -->
+                    <li class="nav-item d-inline p-1">
+                        <% if user_signed_in? %>
+                            <div class="text-light rounded-2 p-1">
+                                <span>
+                                    <div class="dropdown d-flex justify-content-between">
+                                        <button class="btn text-light btn-transparent dropdown-toggle p-0 d-flex align-items-center justify-content-center" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                    <%= current_user.email %>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">
+                                                <% if user_signed_in? %>
+  <%= link_to "Deslogar", destroy_user_session_path, method: :delete %>
+<% end %>
+
+                                            </a></li>
+                                        </ul>
+                                    </div>
+                                </span>
+                            </div>
+                            <% else %>
+                                <%= button_to user_session_path, method: :get,
+                                    class: "btn btn-primary d-flex flex-row align-items-center" do %>
+                                    Entrar
+                                    <% end %>
+                                        <% end %>
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
