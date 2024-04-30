@@ -9,36 +9,48 @@
     </div>
     <div class="offcanvas-body h-100 d-flex justify-content-between flex-column">
         <ul class="list-group list-group-flush">
-
             <li class="list-group-item border-0 bg-transparent text-light">
-                <%= link_to "MORADORES" , moradors_path, class:"roboto-thin nav-link"%>
+                <%= link_to "Moradores" , moradors_path, class:"roboto-thin nav-link"%>
             </li>
             <li class="list-group-item border-0 bg-transparent text-light">
-
-                <%= link_to "SOLICITAÇÕES" , welcome_index_path, class:"roboto-thin nav-link disabled"%>
+                <%= link_to "Solicitações" , welcome_index_path, class:"roboto-thin nav-link disabled"%>
             </li>
-           <!--
+            
+            
             <li class="list-group-item border-0 bg-transparent text-light">
-                <%= button_to new_morador_path, method: :get, class: "nav-link" do %>
-                    CADASTRAR 
-                    <% end %>
-            </li>
-           --> 
-            <li>
                 <div>
                     <%= render 'search/form' %>
                 </div>
             </li>
         </ul>
-        <ul class="m-0 p-0">
-            <li>
-                <li>
-                <div>
-                    <%= render 'search/form' %>
-                </div>
-            </li>
+        <ul class="p-0">
+            <li class="list-group-item border-0 bg-transparent text-light d-flex justify-content-center">
+               <% if user_signed_in? %>
+                            <div class="text-light rounded-2 p-1">
+                                <span>
+                                   <div class="dropdown d-flex justify-content-between dropup">
+                                        <button class="btn text-light w-100 btn-transparent dropdown-toggle p-0 d-flex align-items-center justify-content-center" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                    <%= current_user.email %>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-dark w-100">
+                                            <li>
+                                            <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item formatar text-danger" do%>
+                                            <span>Sair</span>
+                                            <ion-icon name="log-out-outline"></ion-icon>
+                                            <% end %>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </span>
+                            </div>
+                            <% else %>
+                                <%= button_to user_session_path, method: :get,
+                                    class: "btn btn-primary d-flex flex-row align-items-center" do %>
+                                    Entrar
+                                    <% end %>
+                                        <% end %>
             </li>
         </ul>
     </div>
 </div>
-<div>

@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-
 ruby "3.0.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -14,6 +13,7 @@ gem "sprockets-rails"
 gem 'mysql2'
 gem 'cpf_cnpj'
 gem 'dotenv-rails'
+gem 'jquery-ui-rails'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 

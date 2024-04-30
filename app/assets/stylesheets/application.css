@@ -1,18 +1,17 @@
+
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+ 
  .navbar {
    /* border-bottom: 1px solid #ffffff; */
    /* backdrop-filter: blur(5px); */
-   /* transition: background-color .2s ease-in-out; */
-   background-color: #1a1a1a;
-   border-bottom: 1px solid gray;
+   transition: background-color .2s ease-in-out;
+   background-color: #03120E;
+   border-bottom: 1px solid rgba(174, 174, 174, 0.588);
  }
-
-
  .onTop {
    /* background-color: #0d223b; */
-   /* border: 0; */
+   border: 0;
  }
  @media (max-width: 768px) {
    .hide {
@@ -42,19 +41,19 @@
  .navbar {
    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);  */
 
-   min-height: 10vh;
  }
 
  /* welcome */
  .welcome {
-   min-height: 100vh;
+   /* min-height: 100vh; */
+
    /* background: linear-gradient(to left bottom, #062952, #3b8eea); */
    /* background: linear-gradient(to left bottom, #041f3e, #022042); */
    background: linear-gradient(to left bottom, #3a45d7, #021b38);
  }
 
  .texture-welcome {
-   min-height: 100vh;
+   /* min-height: 100vh; */
    background-image: url(texture.png);
    background-attachment: fixed;
    background-repeat: no-repeat;
@@ -70,7 +69,6 @@
  /* main geral (padrão) */
  #main {
    background-color: #ffffff;
-   min-height: 90vh;
  }
 
  /* FONTES ************************************ */
@@ -79,18 +77,13 @@
    font-optical-sizing: auto;
    /* font-weight: 400; */
  }
-
  /* ******************************************* */
-
  /* formatar links gerais */
  .link {
    color: #364652 !important;
    display: flex;
    align-items: center;
  }
-
- /* navbar links */
-
  .nav-link-custom:hover {
    box-shadow: 0 6px 0 #ffffff inset;
    /* Adiciona sombra para cima */
@@ -104,32 +97,12 @@
    /* letter-spacing: 2px; */
    color: #ffffff !important;
  }
-
  .disabled {
    color: #c7c7c7 !important;
  }
-
- /* formatando botões */
- /* .btn.cadastrar {
-  background-color: #ffffff !important;
-  border-radius: 40px;
-  color: #364652 !important;
-  font-size: 1em;
-  display: flex;
-  justify-content:space-around;
-  transition:all 0.2s;
-  align-items: center;
-  width: 135px;
-}
-.btn.cadastrar:hover{
-  background-color:#31ab63 !important;
-  color: white;
-} */
-
  ul {
    list-style: none;
  }
-
  /* Formulario de cadastro de morador */
  .formu {
    padding: 1.5em;
@@ -142,15 +115,13 @@
    max-width: 600px;
  }
 
- /* body da tela de cadastro */
- .corpo-cad {
-   width: 100vw;
-   min-height: 90vh;
- }
-
 .formatar{
   display: flex;
   gap: 2;
   justify-content: center;
   align-items: center;
  }
+ .logo-img {
+    max-width: 200px;
+    max-height: 50px;
+}

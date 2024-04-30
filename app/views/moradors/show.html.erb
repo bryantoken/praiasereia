@@ -1,10 +1,17 @@
   <div class="container">
-    <h1 class="text-center">Morador #<%= @morador.id %></h1>
+    <h1 class="text-center text-light">Morador #<%= @morador.id %></h1>
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-md-4">
+      
+      <div class="col-lg-4 col-md-6">
         <div class="card h-100">
         
 <h5 class="card-header">
+  <div class="d-flex w-100 me-auto">
+  <%= link_to moradors_path, class: "text-decoration-none link fs-6" do %>
+<ion-icon name="arrow-back"></ion-icon>
+  Voltar
+  <% end %>
+</div>
           Bloco <%= @morador.bloco %> - 
           Ap. <%= @morador.apartamento %> 
           </h5>
