@@ -47,20 +47,18 @@
                         <% if user_signed_in? %>
                             <div class="text-light rounded-2 p-1">
                                 <span>
-                                    <div class="dropdown d-flex justify-content-between">
+                                   <div class="dropdown d-flex justify-content-between">
                                         <button class="btn text-light btn-transparent dropdown-toggle p-0 d-flex align-items-center justify-content-center" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                     <%= current_user.email %>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-dark">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">
-                                                <% if user_signed_in? %>
-  <%= link_to "Deslogar", destroy_user_session_path, method: :delete %>
-<% end %>
-
-                                            </a></li>
+                                            <li>
+                                            <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item formatar bg-danger" do%>
+                                            <span>Sair</span>
+                                            <ion-icon name="log-out-outline"></ion-icon>
+                                            <% end %>
+                                        </li>
                                         </ul>
                                     </div>
                                 </span>
